@@ -42,9 +42,15 @@
     <p>Converted Number: <span id="spanResult"></span></p>
 
     <script>
-        async function callApi(from, to) {
-            let response = await fetch(`https://free.currencyconverterapi.com/api/v6/convert?q=${from}_${to}&compact=y&apiKey=d4548d97788ad3896502`);
-            let data = await response.json()
+        async function convertApi(from, to) {
+            let response = await fetch(`https://free.currencyconverterapi.com/api/v6/convert?q=${from}_${to}&compact=y&apiKey=d4548d97788ad3896502`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'API-Key': 'secret'
+                }
+            });
+            let data = await response.json();
             return data;
         }
 
@@ -73,13 +79,12 @@
                 let from = document.getElementById('typeCurrencyIn').value;
                 let to = document.getElementById('typeCurrencyOut').value;
 
-                callApi(from, to).then((data) => {
-                    if (data) {
-                        let result = data[`${from}_${to}`].val * inputValue
-                        spanResult.innerHTML = `<span class="hightlight">${inputValue}</span> ${from} = <span class="hightlight">${result}</span> ${to}`;
-                    } else {
-                        alert("Can't get data");
-                    }
+                convertApi(from, to).then((data) => {
+                    let result = data[`${from}_${to}`].val * inputValue
+                    spanResult.innerHTML = `<span class="hightlight">${inputValue}</span> ${from} = <span class="hightlight">${result}</span> ${to}`;
+                    
+                }).catch((err) => {
+                    alert("Can't get data: " + err);
                 })
             });
         }
