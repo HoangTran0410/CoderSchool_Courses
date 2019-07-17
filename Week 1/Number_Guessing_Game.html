@@ -138,15 +138,15 @@
 
                 if (userGuess == correctAnswer) {
                     paused = true;
-                    console.log(`Bạn thắng!! Đáp án đúng là ${userGuess}.`);
-                    init();
+                    if(confirm(`Bạn thắng!! Đáp án đúng là ${userGuess}.`))
+                        init();
                     return;
                 }
 
                 if (guessLeft == 0) {
                     paused = true;
-                    console.log(`Bạn thua!! Đáp án đúng là ${userGuess}.`)
-                    init();
+                    if(confirm(`Bạn thua!! Đáp án đúng là ${userGuess}.`))
+                        init();
                     return;
                 }
 
