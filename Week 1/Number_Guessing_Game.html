@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        html,
+        body {
+            margin: auto;
+            text-align: center;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;
+            text-decoration: underline;
+        }
+
+        #range {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h3>Hãy tìm số nằm giữa <span id="range"></span></h3>
+    <div>
+        <input type="checkbox" id="auto">
+        <label for="auto">Tự động tìm</label>
+    </div>
+    <input type="number" id="number">
+    <button id="guessButton">Đoán</button>
+    <div id="message"></div>
+    <div id="history"></div>
+    <p id="simulate"></p>
+
+    <script>
+        let correctAnswer, minValue, maxValue, guessLeft;
+        let left, right, currentValue; // for auto guess
+        let paused;
+
+        let messageDiv = document.getElementById('message');
+        let button = document.getElementById('guessButton');
+        let input = document.getElementById('number');
+        let historyDiv = document.getElementById('history');
+        let rangeSpan = document.getElementById('range');
+        let simuP = document.getElementById('simulate');
+
+        function init() {
+            minValue = getRandNum(-10000, 0);
+            maxValue = getRandNum(0, 10000);
+            guessLeft = 12;
+            paused = false;
+
+            correctAnswer = getRandNum(minValue, maxValue);
+            rangeSpan.innerHTML = `${minValue} to ${maxValue}`;
+            historyDiv.innerHTML = 'Các số bạn đã đoán: ';
+            messageDiv.innerHTML = '';
+            input.value = '';
+
+            left = minValue;
+            right = maxValue;
+            currentValue = trungBinhCong(left, right);
+        }
+
+        function getRandNum(from, to) {
+            return ~~(Math.random() * (to - from) + from);
+        }
+
+        function trungBinhCong(a, b) {
+            return ~~((a + b) / 2);
+        }
+
+        function simulate() {
+            let len = 70;
+            let str = '';
+
+            let leftPos = ~~((left - minValue) / (maxValue - minValue) * len);
+            let rightPos = ~~((right - minValue) / (maxValue - minValue) * len);
+
+            for (let i = 1; i <= len; i++) {
+
+                if (i == 1 && left == minValue) {
+                    str += minValue + '.';
+                } else if (i == len && right == maxValue) {
+                    str += '.' + maxValue;
+                } else if (i < leftPos || i > rightPos) {
+                    str += '#';
+                } else if (i == leftPos) {
+                    str += '.' + left + '.';
+                } else if (i == rightPos) {
+                    str += '.' + right + '.';
+                } else {
+                    str += '.';
+                }
+            }
+
+            simuP.innerHTML = str;
+        }
+
+        function calculateNextValue() {
+            let num = Number(input.value)
+            currentValue = (num == NaN ? currentValue : num);
+
+            if (correctAnswer > currentValue) {
+                currentValue > left ? left = currentValue : null;
+                currentValue = trungBinhCong(right, currentValue);
+
+            } else if (correctAnswer < currentValue) {
+                currentValue < right ? right = currentValue : null;
+                currentValue = trungBinhCong(left, currentValue);
+            }
+        }
+
+        window.onload = function () {
+            init();
+
+            button.addEventListener('click', function () {
+                let userGuess = input.value;
+
+                if (userGuess == '') {
+                    return;
+                }
+
+                guessLeft--;
+                historyDiv.innerHTML += userGuess + ', ';
+                calculateNextValue();
+                simulate();
+
+                if (userGuess == correctAnswer) {
+                    paused = true;
+                    console.log(`Bạn thắng!! Đáp án đúng là ${userGuess}.`);
+                    init();
+                    return;
+                }
+
+                if (guessLeft == 0) {
+                    paused = true;
+                    console.log(`Bạn thua!! Đáp án đúng là ${userGuess}.`)
+                    init();
+                    return;
+                }
+
+                if (userGuess > correctAnswer) {
+                    messageDiv.innerHTML = `Số ${userGuess} <span class="wrong">Cao hơn</span> số cần tìm, hãy đoán thấp hơn.`;
+
+                } else if (userGuess < correctAnswer) {
+                    messageDiv.innerHTML = `Số ${userGuess} <span class="wrong">Thấp hơn</span> số cần tìm, hãy đoán cao hơn.`;
+                }
+
+                messageDiv.innerHTML += ` Bạn còn <span class="wrong">${guessLeft}</span> lần đoán`;
+                input.focus();
+            });
+
+            setInterval(function () {
+                if (document.getElementById('auto').checked == true && !paused) {
+                    input.value = currentValue;
+                    button.click();
+                }
+            }, 700);
+        }
+    </script>
+</body>
+
+</html>
