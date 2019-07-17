@@ -6,51 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <style>
+        html,
+        body {
+            margin: auto;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: aquamarine;
+        }
+
+        .hightlight {
+            font-weight: bold;
+            background-color: aquamarine;
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>currency Converter</h1>
+    <h1>Currency Converter</h1>
 
-    <p>Select input currency:</p>
-    <select name="" id="typeCurrency">
+    Select input currency: <select name="" id="typeCurrencyIn"></select>
+    <br><br>
 
-    </select>
-    <br>
+    Select output currency: <select name="" id="typeCurrencyOut"></select>
+    <br><br>
 
     <input type="number" id="input">
-    <button id="btnConvert">Convert to VND</button>
+    <button id="btnConvert">Convert</button>
 
     <p>Converted Number: <span id="spanResult"></span></p>
 
     <script>
-        async function callApi(currency) {
-            let response = await fetch(`https://free.currencyconverterapi.com/api/v6/convert?q=${currency}_VND&compact=y&apiKey=d4548d97788ad3896502`);
+        async function callApi(from, to) {
+            let response = await fetch(`https://free.currencyconverterapi.com/api/v6/convert?q=${from}_${to}&compact=y&apiKey=d4548d97788ad3896502`);
             let data = await response.json()
             return data;
         }
 
         window.onload = function () {
+            // get elements
             let input = document.getElementById('input');
             let btnConvert = document.getElementById('btnConvert');
             let spanResult = document.getElementById('spanResult');
-            let selectBox = document.getElementById('typeCurrency');
+            let selectBoxIn = document.getElementById('typeCurrencyIn');
+            let selectBoxOut = document.getElementById('typeCurrencyOut');
 
+            // put all currencies to select tag
             let curencies = "AED,AFN,ALL,AMD,ANG,AOA,ARS,AUD,AWG,AZN,BAM,BBD,BDT,BGN,BHD,BIF,BMD,BND,BOB,BRL,BSD,BTC,BTN,BWP,BYN,BYR,BZD,CAD,CDF,CHF,CLF,CLP,CNY,COP,CRC,CUC,CUP,CVE,CZK,DJF,DKK,DOP,DZD,EGP,ERN,ETB,EUR,FJD,FKP,GBP,GEL,GGP,GHS,GIP,GMD,GNF,GTQ,GYD,HKD,HNL,HRK,HTG,HUF,IDR,ILS,IMP,INR,IQD,IRR,ISK,JEP,JMD,JOD,JPY,KES,KGS,KHR,KMF,KPW,KRW,KWD,KYD,KZT,LAK,LBP,LKR,LRD,LSL,LVL,LYD,MAD,MDL,MGA,MKD,MMK,MNT,MOP,MRO,MUR,MVR,MWK,MXN,MYR,MZN,NAD,NGN,NIO,NOK,NPR,NZD,OMR,PAB,PEN,PGK,PHP,PKR,PLN,PYG,QAR,RON,RSD,RUB,RWF,SAR,SBD,SCR,SDG,SEK,SGD,SHP,SLL,SOS,SRD,STD,SVC,SYP,SZL,THB,TJS,TMT,TND,TOP,TRY,TTD,TWD,TZS,UAH,UGX,USD,UYU,UZS,VEF,VND,VUV,WST,XAF,XAG,XCD,XDR,XOF,XPF,YER,ZAR,ZMK,ZMW,ZWL";
             let cs = curencies.split(',');
-            let defaultCS = 'USD';
 
             for (let c of cs) {
-                selectBox.innerHTML += `<option value="${c}">${c}</option>`;
+                selectBoxIn.innerHTML += `<option value="${c}">${c}</option>`;
+                selectBoxOut.innerHTML += `<option value="${c}">${c}</option>`;
             }
-            selectBox.value = defaultCS;
+            selectBoxIn.value = 'USD';
+            selectBoxOut.value = 'VND';
 
+            // click event
             btnConvert.addEventListener('click', function () {
                 let inputValue = input.value;
-                let typeCurrency = document.getElementById('typeCurrency').value;
+                let from = document.getElementById('typeCurrencyIn').value;
+                let to = document.getElementById('typeCurrencyOut').value;
 
-                callApi(typeCurrency).then((data) => {
-                    let vnd = data[typeCurrency + '_VND'].val * inputValue
-                    spanResult.innerHTML = vnd + ' VND';
+                callApi(from, to).then((data) => {
+                    if (data) {
+                        let result = data[`${from}_${to}`].val * inputValue
+                        spanResult.innerHTML = `<span class="hightlight">${inputValue}</span> ${from} = <span class="hightlight">${result}</span> ${to}`;
+                    } else {
+                        alert("Can't get data");
+                    }
                 })
             });
         }
