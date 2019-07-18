@@ -14,6 +14,7 @@ Completed user stories:
  * [ ] Optional: Change message container color
  * [x] Optional: Limit person to 12 guesses, show many guesses remaining
  * 
+ * [x] My Optional: Simulate position of numbers
  * [x] My Optional: Auto Guessing
 
 **Walkthrough of game:**
