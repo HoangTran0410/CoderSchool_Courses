@@ -1,7 +1,7 @@
 # Currency Converter
 
 This is an Web demo application for convert currency.
-Live Demo [Here](CurrencyConverter.html).
+Live Demo [Here](https://hoangtran0410.github.io/CoderSchool_Courses/Currency Converter/CurrencyConverter.html).
 
 **Time spent:** 4 hours spent in total
 
