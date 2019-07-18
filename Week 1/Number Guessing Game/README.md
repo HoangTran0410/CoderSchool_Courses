@@ -1,6 +1,7 @@
 # Number Guessing Game
 
 This is an web demo of Number Gussing Game.
+Live Demo [Here](Number_Guessing_Game.html).
 
 **Time spent:** 5 hours spent in total
 
