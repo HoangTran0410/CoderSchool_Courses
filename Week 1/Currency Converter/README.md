@@ -15,6 +15,6 @@ Completed user stories:
 
 **Walkthrough of app:**
 
-![Video Walkthrough](https://github.com/HoangTran0410/CoderSchool_Courses/raw/master/Week%201/currency_converter.gif)
+![Video Walkthrough](currency_converter.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).

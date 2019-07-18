@@ -1,20 +1,23 @@
 # Number Guessing Game
 
-This is an Web demo application for convert currency.
+This is an web demo of Number Gussing Game.
 
-**Time spent:** 4 hours spent in total
+**Time spent:** 5 hours spent in total
 
 Completed user stories:
 
- * [x] Required: Start a new JSFiddle
- * [x] Required: Add a new button
- * [x] Required: Output to the existing page
- * [x] Required: Add a textbox
- * [x] Required: Different Currencies
- * [x] Optional: API Integration
+ * [x] Required: Setting up UI elements
+ * [x] Required: Bind the event to elements
+ * [x] Required: Get Value From User Input
+ * [x] Required: Show the correct message
+ * [x] Optional: Show user's past guesses
+ * [ ] Optional: Change message container color
+ * [x] Optional: Limit person to 12 guesses, show many guesses remaining
+ * 
+ * [x] My Optional: Auto Guessing
 
-**Walkthrough of app:**
+**Walkthrough of game:**
 
-![Video Walkthrough](https://github.com/HoangTran0410/CoderSchool_Courses/raw/master/Week%201/currency_converter.gif)
+![Video Walkthrough](number_guessing_game.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
