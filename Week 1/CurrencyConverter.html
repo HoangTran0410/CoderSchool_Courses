@@ -43,13 +43,7 @@
 
     <script>
         async function convertApi(from, to) {
-            let response = await fetch(`https://free.currencyconverterapi.com/api/v6/convert?q=${from}_${to}&compact=y&apiKey=d4548d97788ad3896502`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'API-Key': 'secret'
-                }
-            });
+            let response = await fetch(`https://free.currencyconverterapi.com/api/v6/convert?q=${from}_${to}&compact=y&apiKey=d4548d97788ad3896502`);
             let data = await response.json();
             return data;
         }
