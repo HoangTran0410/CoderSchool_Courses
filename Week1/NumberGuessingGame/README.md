@@ -1,7 +1,7 @@
 # Number Guessing Game
 
-This is an web demo of Number Gussing Game.
-Live Demo [Here](https://hoangtran0410.github.io/CoderSchool_Courses/Week%201/Number%20Guessing%20Game/Number_Guessing_Game.html).
+This is an web demo of Number Guessing Game.
+Live Demo [Here](https://hoangtran0410.github.io/CoderSchool_Courses/Week1/NumberGuessingGame/Number_Guessing_Game.html).
 
 **Time spent:** 5 hours spent in total
 
@@ -18,8 +18,8 @@ Completed user stories:
  * [x] My Optional: Simulate position of numbers
  * [x] My Optional: Auto Guessing
 
-**Walkthrough of game:**
+**Walk through of game:**
 
-![Video Walkthrough](number_guessing_game.gif)
+![Video Walk through](number_guessing_game.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).

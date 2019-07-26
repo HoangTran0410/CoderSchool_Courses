@@ -1,7 +1,7 @@
 # Currency Converter
 
 This is an Web demo application for convert currency.
-Live Demo [Here](https://hoangtran0410.github.io/CoderSchool_Courses/Week%201/Currency%20Converter/CurrencyConverter.html).
+Live Demo [Here](https://hoangtran0410.github.io/CoderSchool_Courses/Week1/CurrencyConverter/CurrencyConverter.html).
 
 **Time spent:** 4 hours spent in total
 
@@ -14,8 +14,8 @@ Completed user stories:
  * [x] Required: Different Currencies
  * [x] Optional: API Integration
 
-**Walkthrough of app:**
+**Walk through of app:**
 
-![Video Walkthrough](currency_converter.gif)
+![Video Walk through](currency_converter.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
