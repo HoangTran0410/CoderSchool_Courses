@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ReactNative - Expo</title>
+
+    <link rel="stylesheet" href="application.css">
+
+  </head>
+  <body>
+    <div class="panel-body markdown-body" style="max-width: 800px; margin: auto">
+      <div class="action-bar pull-right hidden-print"></div>
+
+      <h2>
+        <a
+          class="anchor"
+          id="heading-1-install-nodejs"
+          href="#heading-1-install-nodejs"
+          ><span class="glyphicon glyphicon-link"></span></a
+        >1/ Install NodeJS 🎰
+      </h2>
+
+      <p>
+        Get started with Node to use everything in the JS ecosystem, including
+        Expo and React Native. We recommend using the latest Node version.
+      </p>
+
+      <ul>
+        <li>
+          <a href="https://nodejs.org/en/download/"
+            >https://nodejs.org/en/download/</a
+          >
+        </li>
+      </ul>
+
+      <p>
+        After intall npm success. Then open the terminal (For Mac or Linux) or
+        open
+        <code>cmd</code> if you are using Window
+      </p>
+
+      <p>Then we check version of npm</p>
+      <pre class="highlight plaintext"><code>npm --version
+      Hope you see something like this
+      v6.4.1 or vx.x.x
+      </code></pre>
+
+      <hr />
+
+      <h2>
+        <a
+          class="anchor"
+          id="heading-2-create-expo-account"
+          href="#heading-2-create-expo-account"
+          ><span class="glyphicon glyphicon-link"></span></a
+        >2/ <a href="https://expo.io/signup">Create Expo Account</a> ⚡
+      </h2>
+
+      <hr />
+
+      <h2>
+        <a
+          class="anchor"
+          id="heading-3-install-expo-cli-expo-command-line-tool"
+          href="#heading-3-install-expo-cli-expo-command-line-tool"
+          ><span class="glyphicon glyphicon-link"></span></a
+        >3/ Install Expo Cli (Expo Command Line Tool) 💻
+      </h2>
+
+      <p>
+        You will run this tool locally to package, serve, and publish your
+        projects.
+      </p>
+      <pre class="highlight plaintext"><code>npm install expo-cli --global
+      </code></pre>
+
+      <hr />
+
+      <h2>
+        <a
+          class="anchor"
+          id="heading-4-create-your-first-project"
+          href="#heading-4-create-your-first-project"
+          ><span class="glyphicon glyphicon-link"></span></a
+        >4/ Create your first project
+      </h2>
+
+      <h3>
+        <a
+          class="anchor"
+          id="heading-41-open-terminal-mac-or-linux-or-cmd-command-line-tool-window"
+          href="#heading-41-open-terminal-mac-or-linux-or-cmd-command-line-tool-window"
+          ><span class="glyphicon glyphicon-link"></span></a
+        >4.1/ Open terminal (Mac or Linux) or cmd - Command line tool (Window)
+      </h3>
+
+      <h3>
+        <a
+          class="anchor"
+          id="heading-42-login-expo-using-this-command"
+          href="#heading-42-login-expo-using-this-command"
+          ><span class="glyphicon glyphicon-link"></span></a
+        >4.2/ Login expo using this command
+      </h3>
+      <pre class="highlight plaintext"><code>expo login
+      </code></pre>
+
+      <p>Then type user name and password</p>
+
+      <h3>
+        <a
+          class="anchor"
+          id="heading-43-init-the-project-with-name-week2"
+          href="#heading-43-init-the-project-with-name-week2"
+          ><span class="glyphicon glyphicon-link"></span></a
+        >4.3/ Init the project with name <code>week2</code>
+      </h3>
+      <pre class="highlight plaintext"><code>expo init week2
+      </code></pre>
+
+      <ul>
+        <li>Choose blank project</li>
+      </ul>
+
+      <p><img src="https://imgur.com/UA8ZoKr.png" alt="" /></p>
+
+      <ul>
+        <li>Type your project name here</li>
+      </ul>
+
+      <p><img src="https://imgur.com/8KY6SEq.png" alt="" /></p>
+
+      <ul>
+        <li>Press enter to continue</li>
+      </ul>
+
+      <p><img src="https://imgur.com/cobrYzp.png" alt="" /></p>
+
+      <h3>
+        <a
+          class="anchor"
+          id="heading-44-change-directory-to-week2-directory-using-cd-command-cd-is-change-directory"
+          href="#heading-44-change-directory-to-week2-directory-using-cd-command-cd-is-change-directory"
+          ><span class="glyphicon glyphicon-link"></span></a
+        >4.4/ Change directory to <em>week2</em> directory using cd command
+        (<code>cd</code> is <em>Change Directory</em>)
+      </h3>
+      <pre class="highlight plaintext"><code>cd week2
+      </code></pre>
+
+      <h3>
+        <a
+          class="anchor"
+          id="heading-45-then-start-the-project-using-this-command"
+          href="#heading-45-then-start-the-project-using-this-command"
+          ><span class="glyphicon glyphicon-link"></span></a
+        >4.5/ Then start the project using this command
+      </h3>
+      <pre class="highlight plaintext"><code>expo start
+      </code></pre>
+
+      <p>Hopefully you see something like this</p>
+
+      <p><img src="https://imgur.com/61yomeg.png" alt="" /></p>
+
+      <blockquote>
+        <p>We have 3 things in the image</p>
+
+        <blockquote>
+          <p>
+            1/ Run on Android device/emulator (<a
+              href="https://docs.expo.io/versions/latest/workflow/android-studio-emulator/"
+              >https://docs.expo.io/versions/latest/workflow/android-studio-emulator/</a
+            >)
+          </p>
+
+          <p>
+            2/ Run on iOS simulator
+            <code>(Just for Mac, Can't run on Window or Linux)</code>
+          </p>
+
+          <p>
+            3/ Use to run on your device (Android &amp; iOS). At first you need
+            to download on Store
+          </p>
+
+          <blockquote>
+            <ul>
+              <li>
+                <p>
+                  <a
+                    href="https://search.itunes.apple.com/WebObjects/MZContentLink.woa/wa/link?path=apps%2fexponent"
+                    >iOS (AppStore)</a
+                  >
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=host.exp.exponent"
+                    >Android (Playstore)</a
+                  >
+                </p>
+              </li>
+            </ul>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <h3>
+        <a
+          class="anchor"
+          id="heading-5-running-on-real-device"
+          href="#heading-5-running-on-real-device"
+          ><span class="glyphicon glyphicon-link"></span></a
+        >5/ Running on Real device
+      </h3>
+
+      <ul>
+        <li>
+          Login your account to your <code>Expo App</code> installed on your
+          phone. Then go to <code>Project Tab</code> to see your code
+        </li>
+      </ul>
+
+      <p><img src="https://imgur.com/27dYdRZ.png" alt="" /></p>
+
+      <p>Then tap on it then enjoy 🍒🍒🍒</p>
+
+      <hr />
+
+      <h1>
+        <a
+          class="anchor"
+          id="heading-if-you-dont-forgot-login-you-can-just-scan-qr-code-then-run"
+          href="#heading-if-you-dont-forgot-login-you-can-just-scan-qr-code-then-run"
+          ><span class="glyphicon glyphicon-link"></span></a
+        >⌛<em
+          >IF YOU DON'T FORGOT LOGIN, YOU CAN JUST SCAN QR CODE THEN RUN</em
+        >
+      </h1>
+
+      <p>
+        <img
+          src="https://media.giphy.com/media/W08xRIvzm7WzdDdlnS/giphy.gif"
+          alt=""
+        />
+      </p>
+    </div>
+  </body>
+</html>
