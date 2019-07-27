@@ -23,6 +23,6 @@ Completed user stories:
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 **How to install:**
- 1. Create an [blank Expo Project](https://hoangtran0410.github.io/CoderSchool_Courses/TutorialPrepare)
+ 1. Create a [blank Expo Project](https://hoangtran0410.github.io/CoderSchool_Courses/TutorialPrepare)
  2. Download all folders and files in this **Instagram Feed** repository
  3. Copy and paste to blank Project you have created
