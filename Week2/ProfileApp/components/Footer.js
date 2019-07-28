@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 export default class Footer extends React.Component {
