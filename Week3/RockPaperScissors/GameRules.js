@@ -21,7 +21,7 @@ const CHOISES = {
   },
 };
 
-var getRandomChoise = function() {
+const getRandomChoise = function() {
   var keys = Object.keys(CHOISES);
   return CHOISES[keys[(keys.length * Math.random()) << 0]];
 };
@@ -34,7 +34,7 @@ const RULEWIN = {
   Dinh: ['Bao', 'Keo'],
 };
 
-function checkWin(choise1, choise2) {
+const checkWin = (choise1, choise2) => {
   let list = RULEWIN[choise1.name];
   for (let correctChoise2ForChoise1Win of list) {
     if (choise2.name == correctChoise2ForChoise1Win) {
@@ -52,7 +52,7 @@ function checkWin(choise1, choise2) {
   return 0;
 }
 
-function getStatus(valueCheck) {
+const getStatus = (valueCheck) => {
   switch(valueCheck) {
     case 1: return 'Thắng';
     case 2: return 'Thua';
@@ -60,7 +60,7 @@ function getStatus(valueCheck) {
   }
 }
 
-function getColorStatus(valueCheck) {
+const getColorStatus = (valueCheck) => {
   switch(valueCheck) {
     case 1: return '#5f5';
     case 2: return '#f55';
