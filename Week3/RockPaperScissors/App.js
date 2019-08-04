@@ -33,8 +33,8 @@ export default class App extends React.Component {
       playerChoise: choise,
       computerChoise: compChoise,
 
-      winCount: this.state.winCount + (check == 2 ? 1 : 0),
-      loseCount: this.state.loseCount + (check == 1 ? 1 : 0),
+      winCount: this.state.winCount + (check == 1 ? 1 : 0),
+      loseCount: this.state.loseCount + (check == 2 ? 1 : 0),
       tieCount: this.state.tieCount + (check == 0 ? 1 : 0),
       status: status,
       colorStatus: color,
