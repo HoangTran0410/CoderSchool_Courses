@@ -68,4 +68,4 @@ function getColorStatus(valueCheck) {
   }
 }
 
-export { CHOISES, checkWin, getRandomChoise, getStatus, getColorStatus };
+export { CHOISES, RULEWIN, checkWin, getRandomChoise, getStatus, getColorStatus };

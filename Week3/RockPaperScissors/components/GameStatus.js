@@ -2,6 +2,8 @@ import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Alert } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
+import { RULEWIN, CHOISES } from '../GameRules';
+
 export default class GameStatus extends React.Component {
   constructor(props) {
     super(props);
@@ -16,8 +18,7 @@ export default class GameStatus extends React.Component {
 
   showHistory() {
     let his = this.props.data.history;
-    let str = 'Bạn đã chơi ' + his.length + ' lần\n\n';
-    str += 'Lần: Bạn - Máy:\n';
+    let str = 'Lần: Bạn - Máy:\n';
     let i = his.length;
     for (let h of his) {
       str += `${i}: ${h.playerChoise.nameVN} - ${h.computerChoise.nameVN}\n`;
@@ -71,6 +72,18 @@ export default class GameStatus extends React.Component {
     )
   }
 
+  showHow() {
+    let str = '';
+    for (let r in RULEWIN) {
+      str += `(${CHOISES[r].nameVN}) thắng (`;
+      for (let rToWin of RULEWIN[r]) {
+        str += `${CHOISES[rToWin].nameVN}, `;
+      }
+      str += ')\n';
+    }
+    Alert.alert('Luật chơi', str);
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -78,8 +91,8 @@ export default class GameStatus extends React.Component {
           <Feather name="info" style={styles.icon} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.split} onPress={() => { alert('Star') }}>
-          <Feather name="star" style={styles.icon} />
+        <TouchableOpacity style={styles.split} onPress={() => { this.showHow() }}>
+          <Feather name="help-circle" style={styles.icon} />
         </TouchableOpacity>
 
         <View style={[styles.split, styles.columnFlex, { backgroundColor: this.props.data.colorStatus }]}>
