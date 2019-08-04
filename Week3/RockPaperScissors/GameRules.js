@@ -14,14 +14,11 @@ const CHOISES = {
     nameVN: 'Bao',
     img: require('./assets/Bao.png'),
   },
-  // Dinh: {
-  //   name: 'Dinh',
-  //   nameVn: 'Đinh',
-  //   img: {
-  //     uri:
-  //       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA_sptY0KZvbaPGMtUWI6ifUqnv04r1Vr66iOauLUo_SBZZvfw',
-  //   },
-  // },
+  Dinh: {
+    name: 'Dinh',
+    nameVN: 'Đinh',
+    img: require('./assets/Dinh.png'),
+  },
 };
 
 var getRandomChoise = function() {
