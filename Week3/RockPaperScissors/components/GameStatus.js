@@ -21,7 +21,7 @@ export default class GameStatus extends React.Component {
     let str = 'Lần: Bạn - Máy:\n';
     let i = his.length;
     for (let h of his) {
-      str += `${i}: ${h.playerChoise.nameVN} - ${h.computerChoise.nameVN}\n`;
+      str += `${i}: ${h.playerChoise.nameVN} - ${h.computerChoise.nameVN} (${h.status})\n`;
       i--;
     }
     Alert.alert(

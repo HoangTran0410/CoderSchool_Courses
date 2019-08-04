@@ -41,7 +41,8 @@ export default class App extends React.Component {
       history: [
         {
           playerChoise: choise,
-          computerChoise: compChoise
+          computerChoise: compChoise,
+          status: status,
         },
         ...this.state.history,
       ],
