@@ -63,4 +63,12 @@ function getStatus(valueCheck) {
   }
 }
 
-export { CHOISES, checkWin, getRandomChoise };
+function getColorStatus(valueCheck) {
+  switch(valueCheck) {
+    case 1: return '#5f5';
+    case 2: return '#f55';
+    case 0: return '#e9e9e9';
+  }
+}
+
+export { CHOISES, checkWin, getRandomChoise, getStatus, getColorStatus };

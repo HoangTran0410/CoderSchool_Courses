@@ -42,7 +42,7 @@ export default class ChoiseCard extends React.Component {
         {
           rotate: this.animatedValue.interpolate({
             inputRange: [-1, 1],
-            outputRange: (this.props.revert ? ['0.1rad', '-0.1rad'] : ['-0.1rad', '0.1rad']),
+            outputRange: ['-0.1rad', '0.1rad'],
           }),
         },
       ],

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
-import { CHOISES, checkWin, getStatus, getRandomChoise } from './GameRules';
+import { CHOISES, checkWin, getStatus, getColorStatus, getRandomChoise } from './GameRules';
 import ChoiseCard from './components/ChoiseCard';
 import GameStatus from './components/GameStatus';
 
@@ -17,6 +17,7 @@ export default class App extends React.Component {
       loseCount: 0,
       tieCount: 0,
       status: '',
+      colorStatus: '#fff',
       history: [],
       animate: false,
     };
@@ -26,6 +27,7 @@ export default class App extends React.Component {
     let compChoise = getRandomChoise();
     let check = checkWin(choise, compChoise);
     let status = getStatus(check);
+    let color = getColorStatus(check);
 
     this.setState({
       playerChoise: choise,
@@ -35,6 +37,7 @@ export default class App extends React.Component {
       loseCount: this.state.loseCount + (check == 1 ? 1 : 0),
       tieCount: this.state.tieCount + (check == 0 ? 1 : 0),
       status: status,
+      colorStatus: color,
       history: [
         {
           playerChoise: choise,
@@ -45,6 +48,17 @@ export default class App extends React.Component {
       animate: false
     });
   };
+
+  onPressDeleteBtn = () => {
+    this.setState({
+      history: [],
+      winCount: 0,
+      loseCount: 0,
+      tieCount: 0,
+    }, () => {
+      alert('Đã xoá')
+    })
+  }
 
   onPlayerPressBtn = choise => {
     this.setState({
@@ -67,6 +81,7 @@ export default class App extends React.Component {
         />
         <GameStatus
           data={this.state}
+          onPressDeleteBtn={this.onPressDeleteBtn}
         />
         <ChoiseCard
           choise={this.state.playerChoise}
@@ -85,6 +100,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: Constants.statusBarHeight,
     backgroundColor: '#ecf0f1',
-    padding: 8,
+    // padding: 8,
   },
 });
