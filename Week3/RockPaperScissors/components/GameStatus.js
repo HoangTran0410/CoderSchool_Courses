@@ -7,6 +7,13 @@ export default class GameStatus extends React.Component {
     super(props);
   }
 
+  showInfo() {
+    Alert.alert(
+      'Thông tin',
+      'Game: Kéo Búa Bao\nTác giả: Hoàng Trần\nKhoá học: React Native Devc'
+    )
+  }
+
   showHistory() {
     let str = 'Lần: Bạn - Máy:\n';
     let his = this.props.data.history;
@@ -56,12 +63,12 @@ export default class GameStatus extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={styles.split} onPress={() => { alert('Info') }}>
+        <TouchableOpacity style={styles.split} onPress={() => { this.showInfo() }}>
           <Feather name="info" style={styles.icon} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.split} onPress={() => { alert('Flag') }}>
-          <Feather name="bookmark" style={styles.icon} />
+        <TouchableOpacity style={styles.split} onPress={() => { alert('Star') }}>
+          <Feather name="star" style={styles.icon} />
         </TouchableOpacity>
 
         <View style={[styles.split, styles.columnFlex, { backgroundColor: this.props.data.colorStatus }]}>
@@ -71,7 +78,7 @@ export default class GameStatus extends React.Component {
         </View>
 
         <TouchableOpacity style={styles.split} onPress={() => this.showCounting()}>
-          <Feather name="award" style={styles.icon} />
+          <Feather name="trending-up" style={styles.icon} />
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.split} onPress={() => this.showHistory()}>
@@ -104,6 +111,8 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: '#000',
     padding: 10,
+    backgroundColor: '#eee',
+    borderRadius: 20,
   },
   name: {
     fontSize: 16,
