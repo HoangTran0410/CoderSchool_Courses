@@ -15,12 +15,13 @@ export default class GameStatus extends React.Component {
   }
 
   showHistory() {
-    let str = 'Lần: Bạn - Máy:\n';
     let his = this.props.data.history;
-    let i = 1;
+    let str = 'Bạn đã chơi ' + his.length + ' lần\n\n';
+    str += 'Lần: Bạn - Máy:\n';
+    let i = his.length;
     for (let h of his) {
       str += `${i}: ${h.playerChoise.nameVN} - ${h.computerChoise.nameVN}\n`;
-      i++;
+      i--;
     }
     Alert.alert(
       'Lịch Sử', str, [{
