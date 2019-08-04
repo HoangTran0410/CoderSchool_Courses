@@ -99,7 +99,8 @@ const styles = StyleSheet.create({
   },
   columnFlex: {
     flexDirection: 'column',
-    flex: 1.5
+    flex: 1.5,
+    borderRadius: 10,
   },
   split: {
     flexDirection: 'row',
