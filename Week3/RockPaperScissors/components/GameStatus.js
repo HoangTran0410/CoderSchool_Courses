@@ -36,7 +36,16 @@ export default class GameStatus extends React.Component {
 
   showCounting() {
     let data = this.props.data;
-    let str = `Thắng: ${data.winCount} lần \nThua: ${data.loseCount} lần \nHoà: ${data.tieCount} lần`;
+
+    let total = data.history.length || 1;
+    let percentWin = ~~(data.winCount / total * 100);
+    let percentLose = ~~(data.loseCount / total * 100);
+    let percentTie = ~~(data.tieCount / total * 100);
+
+    let str = `Thắng: ${data.winCount} lần (${percentWin}%)\n`;
+    str += `Thua: ${data.loseCount} lần (${percentLose}%)\n`;
+    str += `Hoà: ${data.tieCount} lần (${percentTie}%)`;
+
     Alert.alert(
       'Bộ đếm', str,
       [{
