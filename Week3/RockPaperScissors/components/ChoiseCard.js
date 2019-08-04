@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Animated, Easing } from 'react-native';
 
 import ButtonGroup from './ButtonGroup';
+import NamTay from '../assets/Bua.png';
 
 export default class ChoiseCard extends React.Component {
   constructor(props) {
@@ -58,7 +59,7 @@ export default class ChoiseCard extends React.Component {
             : styles.container
         }>
         <Animated.Image
-          source={this.props.choise.img}
+          source={this.props.animate ? NamTay : this.props.choise.img}
           style={[styles.img, animate]}
         />
         {!this.props.hideInput && (
