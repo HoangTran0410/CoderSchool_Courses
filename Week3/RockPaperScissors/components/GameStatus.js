@@ -42,7 +42,8 @@ export default class GameStatus extends React.Component {
     let percentLose = ~~(data.loseCount / total * 100);
     let percentTie = ~~(data.tieCount / total * 100);
 
-    let str = `Thắng: ${data.winCount} lần (${percentWin}%)\n`;
+    let str = 'Bạn đã chơi ' + his.length + ' lần\n\n';
+    str += `Thắng: ${data.winCount} lần (${percentWin}%)\n`;
     str += `Thua: ${data.loseCount} lần (${percentLose}%)\n`;
     str += `Hoà: ${data.tieCount} lần (${percentTie}%)`;
 
