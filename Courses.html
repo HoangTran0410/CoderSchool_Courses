@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="react" class="container"></div>
+    <div id="data" class="container"></div>
+    <div id="pm" class="container"></div>
+
+    <script>
+      const react_native = {
+        courseName: "React Native - CoderSchool",
+        columnNames: ["Week", "Resources", "Lab", "Assignment"],
+        weeks: {
+          Week1: {
+            Resources: {
+              SLIDES:
+                "https://www.beautiful.ai/player/-LjaTZVBAMis3aEig_jF/RNDevC-Week-1",
+              "RECORD (class 2-4)":
+                "https://www.useloom.com/embed/88c9a418111146a9b48dab1d6210daab",
+              "RECORD (class 3-5)":
+                "https://www.useloom.com/embed/7123045e6e0e44b0811509fbd6499dde",
+              "Learn Flex": "https://flexboxfroggy.com/#vi"
+            },
+            Lab: {
+              "Currency Converter API": "https://free.currencyconverterapi.com/"
+            },
+            Assignment: {
+              "Number Guessing Game in HTML (My RESULT)":
+                "https://github.com/HoangTran0410/CoderSchool_Courses/tree/master/Week1/NumberGuessingGame",
+              "Currency Converter (My RESULT)":
+                "https://github.com/HoangTran0410/CoderSchool_Courses/tree/master/Week1/CurrencyConverter",
+              "Prepare for week 2":
+                "https://hoangtran0410.github.io/CoderSchool_Courses/TutorialPrepare/"
+            }
+          },
+          Week2: {
+            Resources: {
+              SLIDES:
+                "https://www.beautiful.ai/player/-LkIQEv_xZ_JiB4fLCfD/RNDevC-Week-2",
+              "Expo Snack": "http://snack.expo.io/",
+              "ReactNative ShowCase":
+                "http://facebook.github.io/react-native/showcase.html",
+              "ReactNative Component":
+                "https://facebook.github.io/react-native/docs/activityindicator",
+              "RECORD (class 2-4) LiveCode":
+                "https://www.useloom.com/embed/e77598c65acb4086a71241d997f1b972",
+              "RECORD (class 3-5) Lecture":
+                "https://www.useloom.com/embed/380dd42af8bd4511802c912369a9b62a",
+              "RECORD (class 3-5) LiveCode":
+                "https://www.useloom.com/embed/29218f53a7a14d8a8a487f0246f3797c"
+            },
+            Lab: {
+              "Instagram Feed (gif)": "https://i.imgur.com/3UnJfQs.gif"
+            },
+            Assignment: {
+              "Profile App (gif)":
+                "https://cdn.dribbble.com/users/551602/screenshots/6133396/social-dribbble.png",
+              "Profile App (My RESULT)":
+                "https://github.com/HoangTran0410/CoderSchool_Courses/tree/master/Week2/ProfileApp"
+            }
+          },
+          Week3: {
+            Resources: {
+              SLIDES:
+                "https://www.beautiful.ai/player/-LkrYoTNMJZWnqBy68kG/RNDevC-Week-3",
+              "RECORD (class 2-4)":
+                "https://www.loom.com/embed/2cf3c9f44a0a46f297aa4319354ac69e",
+              "RECORD (class 3-5) Lecture":
+                "https://www.loom.com/embed/4efc582b265a4d2e8edc31804b8abbb6",
+              "RECORD (class 3-5) Live1":
+                "https://www.loom.com/embed/9508cfee003347b3989692bdb121c51b",
+              "RECORD (class 3-5) Live2":
+                "https://www.loom.com/embed/bc67d8befa8742dca455c0db61c071cd",
+              "Components & Props":
+                "https://reactjs.org/docs/components-and-props.html",
+              "State & LifeCycle":
+                "https://reactjs.org/docs/state-and-lifecycle.html",
+              "Conditional rendering":
+                "https://reactjs.org/docs/conditional-rendering.html",
+              Hooks: "https://reactjs.org/docs/hooks-intro.html"
+            },
+            Lab: {
+              "Currency Converter (gif)": "https://i.imgur.com/9LR0NFi.gif"
+            },
+            Assignment: {
+              "Rock, Paper, Scissors (gif)": "https://i.imgur.com/7Gfsv9e.gif",
+              "Rock, Paper, Scissors (My RESULT)":
+                "https://github.com/HoangTran0410/CoderSchool_Courses/tree/master/Week3/RockPaperScissors"
+            }
+          },
+          Week4: {
+            Resources: {
+              SLIDES:
+                "https://www.beautiful.ai/player/-LlW_2i920er-fpLLcd-/RNDevC-Week-4",
+              "RECORD (class 2-4)":
+                "https://www.loom.com/embed/99379ff1e17f4be98b863839704df18b",
+              "React navigation": "https://reactnavigation.org/",
+              "Pass parameter to other screen":
+                "https://reactnavigation.org/docs/en/params.html",
+              "Header bar, go config it":
+                "https://reactnavigation.org/docs/en/headers.html",
+              "Authentication flow":
+                "https://reactnavigation.org/docs/en/auth-flow.html"
+            },
+            Lab: {
+              "Zalo Navigation (gif)": "https://i.imgur.com/HtHBzqx.jpg"
+            },
+            Assignment: {
+              "TodoList (gif)": "https://i.imgur.com/djS5ZwT.jpg",
+              "TodoList (My RESULT)":
+                "https://github.com/HoangTran0410/CoderSchool_ReactNative_Week4/tree/master/TodoList"
+            }
+          },
+          Week5: {
+            Resources: {
+              SLIDES:
+                "https://www.beautiful.ai/player/-Lm4ea6izPippEPnxAby/RNDevC-Week-5",
+              "RECORD (class 2-4)":
+                "https://www.loom.com/embed/4682f706bf514717aaec360d5bec0c4f",
+              "RECORD (class 3-5) 1":
+                "https://drive.google.com/file/d/1Ju-QyEyo6HvxoS-IC7HA8I76XsjtXDEk/preview",
+              "RECORD (class 3-5) 2":
+                "https://www.loom.com/embed/31fb5e69603944989be2f5036a5a978e"
+            },
+            Lab: {
+              "Weather (gif)": "https://i.imgur.com/GiyHXC9.gif"
+            },
+            Assignment: {
+              "Google News (gif)": "https://i.imgur.com/LUUDCrU.gif",
+              "Google News (My RESULT)":
+                "https://github.com/HoangTran0410/CoderSchool_ReactNative_Week5/tree/master/GoogleNews"
+            }
+          },
+          Week6: {
+            Resources: {
+              SLIDES:
+                "https://www.beautiful.ai/player/-LmdcqESdNSodZge0b6J/RNDevC-Week-6",
+              "RECORD (class 2-4)":
+                "https://www.loom.com/embed/29b226ad4299481ba38e57b6eb934ae4"
+            },
+            Lab: {
+              "PhotoMap App (gif)":
+                "https://media.giphy.com/media/3ohzdFKJ98htr5hdja/giphy.gif"
+            },
+            Assignment: {}
+          },
+          Week7: {
+            Resources: {},
+            Lab: {},
+            Assignment: {}
+          },
+          Week8: {
+            Resources: {},
+            Lab: {},
+            Assignment: {}
+          }
+        }
+      };
+
+      const data_science = {
+        courseName: "Data Science - CoderSchool",
+        columnNames: ["Week", "Resources", "Lab", "Assignment"],
+        weeks: {
+          Week1: {
+            Resources: {
+              "Coming Soon": ""
+            },
+            Lab: {},
+            Assignment: {}
+          }
+        }
+      };
+
+      const products_manager = {
+        courseName: "Products Manager - CoderSchool",
+        columnNames: ["Week", "Resources", "Lab", "Assignment"],
+        weeks: {
+          Week1: {
+            Resources: {
+              "Coming Soon": ""
+            },
+            Lab: {},
+            Assignment: {}
+          }
+        }
+      };
+
+      // ===================================================================
+
+      window.onload = () => {
+        createTable(react_native, "react");
+        createTable(data_science, "data");
+        createTable(products_manager, "pm");
+      };
+
+      function createTable(data, container) {
+        let header = "";
+        data.columnNames.forEach(element => {
+          header += `<th>${element}  </th>`;
+        });
+
+        let contents = getContents(data);
+
+        let innerHTML = `
+              <table class="table table-dark table-bordered">
+                <thead>
+                  <tr>
+                    <th colspan="4"><h3 class="text-center">${
+                      data.courseName
+                    }</h3></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <thead>
+                    ${header}
+                  </thead>
+                  ${contents}
+                </tbody>
+              </table>`;
+
+        document.getElementById(container).innerHTML = innerHTML;
+      }
+
+      function getContents(data) {
+        let contents = "";
+        let weekCount = 1;
+
+        for (let weekName in data.weeks) {
+          let week = data.weeks[weekName];
+
+          contents += `<tr>`;
+          contents += `<th>${weekCount++}</th>`;
+
+          for (let typeName in week) {
+            let type = week[typeName];
+
+            contents += `<td>`;
+            for (let title in type) {
+              let link = type[title];
+
+              if (link) {
+                contents += `
+                        <a target='_blank' href='${link}'>${title}</a> <br>
+                      `;
+              } else {
+                contents += `<p>${title}</p>`;
+              }
+            }
+            contents += `</td>`;
+          }
+
+          contents += `</tr>`;
+        }
+
+        return contents;
+      }
+    </script>
+
+    <style>
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .table-dark {
+        color: #fff;
+        background-color: #212529;
+      }
+    </style>
+  </body>
+</html>
